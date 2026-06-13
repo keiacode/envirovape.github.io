@@ -4,40 +4,45 @@ html<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Envirovape - Coming Soon</title>
-    <style>
-        body, html { 
-            margin: 0; 
-            padding: 0; 
-            height: 100%; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            background-color: #000000; /* Match your image background color */
-            overflow: hidden;
-        }
+   <style>
+    body, html { 
+        margin: 0; 
+        padding: 0; 
+        height: 100%; 
+        width: 100%;
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        background-color: #000000; /* Match your image background color */
+        overflow: hidden;
+    }
 
-        /* Base rules for both images */
-        .landing-img {
-            max-width: 100%;
-            max-height: 100vh;
-            object-fit: contain;
-        }
+    /* Base rules for both images */
+    .landing-img {
+        width: 100%;
+        height: 100%;
+        max-height: 100vh;
+        /* 💡 CRITICAL: 'contain' stops stretching, keeping the exact look of your design */
+        object-fit: contain; 
+    }
 
-        /* 🖥️ Desktop Rule: Hide the mobile image on larger screens */
-        .mobile-only {
+    /* Desktop View configuration */
+    .mobile-only {
+        display: none;
+    }
+
+    /* Mobile View layout (Optimized for S21 FE bounds) */
+    @media (max-width: 768px) {
+        .desktop-only {
             display: none;
         }
-
-        /* 📱 Mobile Rule: If the screen is narrower than 768px, swap them */
-        @media (max-width: 768px) {
-            .desktop-only {
-                display: none;
-            }
-            .mobile-only {
-                display: block;
-            }
+        .mobile-only {
+            display: block;
+            width: 100vw;
+            height: 100vh;
         }
-    </style>
+    }
+</style>
 </head>
 <body>
 
