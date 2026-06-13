@@ -12,20 +12,40 @@ html<!DOCTYPE html>
             display: flex; 
             justify-content: center; 
             align-items: center; 
-            background-color: #000000; /* Change #000000 to match your image background color */
+            background-color: #000000; /* Match your image background color */
             overflow: hidden;
         }
-        img { 
-            max-width: 100%; 
-            max-height: 100vh; 
-            object-fit: contain; 
+
+        /* Base rules for both images */
+        .landing-img {
+            max-width: 100%;
+            max-height: 100vh;
+            object-fit: contain;
+        }
+
+        /* 🖥️ Desktop Rule: Hide the mobile image on larger screens */
+        .mobile-only {
+            display: none;
+        }
+
+        /* 📱 Mobile Rule: If the screen is narrower than 768px, swap them */
+        @media (max-width: 768px) {
+            .desktop-only {
+                display: none;
+            }
+            .mobile-only {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Replace image-name.jpg below with your exact file name case-sensitively -->
-    <img src="envirovape_landing_page_final2.png" alt="Coming Soon">
-    </body>
-</html>
+
+    <!-- Desktop Version -->
+    <img src="envirovape_landing_page_final2.png" class="landing-img desktop-only" alt="Coming Soon">
+
+    <!-- Mobile Version -->
+    <img src="envirovape_landing_page_final2_mobile.png" class="landing-img mobile-only" alt="Coming Soon">
+
 </body>
 </html>
