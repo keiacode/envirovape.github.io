@@ -1,1 +1,1 @@
-base: '/base_44/',
+base: '/envirovape_base44/',
