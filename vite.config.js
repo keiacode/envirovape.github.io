@@ -1,1 +1,1 @@
-base: '/keiacode/',
+base: '/base_44/',
